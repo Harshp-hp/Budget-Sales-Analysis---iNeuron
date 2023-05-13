@@ -1,0 +1,22 @@
+1. Avg Cost = AVERAGE(Sales[Total Product Cost])
+2. Avg Sales = AVERAGE(Sales[Sales Amount])
+3. Cost New = [Total Cost] * (1+[Cost Change  Value]/100)
+4. CY Sales = 
+    var CY = MAX('Date'[Year])
+    Return 
+    CALCULATE([Total Sales],'Date'[Year])
+5. LY Sales = CALCULATE([Total Sales],SAMEPERIODLASTYEAR('Date'[Year]))
+6. New Profit MArgin = [Profit New]/[Sales New]
+7. Order QTY = SUM(Sales[Order Quantity])
+8. Profit Contribution % = DIVIDE([Total Profit], CALCULATE([Total Profit],ALL('Product'),ALL('SalesTerritory'),All('Customer')))
+9. Profit Margin = [Total Profit]/[Total Sales]
+10. Profit Margin Contribution = DIVIDE([Profit Margin],CALCULATE([Profit Margin],ALL('Product'),ALL('SalesTerritory'),ALL('Customer')))
+11. Profit New = [Sales New] - [Cost New]
+12. Sales New = [Total Sales] * (1+'Price Changed'[Price Changed  Value]/100)
+13. Total Cost = sum(Sales[Total Product Cost])
+14. Total Customers = DISTINCTCOUNT(Customer[Customer])
+15. Total Orders = SUM(Sales[SalesOrderLineKey])
+16. Total Product = DISTINCTCOUNT('Product'[Product])
+17. Total Profit = [Total Sales] - [Total Cost]
+18. Total Sales = SUM(Sales[Sales Amount])
+19. Total Shipped = COUNT(Sales[ShipDateKey])
